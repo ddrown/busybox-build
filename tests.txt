@@ -1,0 +1,89 @@
+All tests run on Android Virtual Devices, using Google's official images
+
+===== x86 =====
+
+Android L
+busybox-x86-pie
+ok
+busybox-x86-nopie
+error: only position independent executables (PIE) are supported.
+
+Android 4.4.2
+busybox-x86-pie
+ok
+busybox-x86-nopie
+ok
+
+Android 4.3
+busybox-x86-pie
+ok
+busybox-x86-nopie
+ok
+
+Android 4.2.2
+busybox-x86-pie
+ok
+busybox-x86-nopie
+ok
+
+Android 4.1.2
+busybox-x86-pie
+ok
+busybox-x86-nopie
+ok
+
+Android 4.0.4
+busybox-x86-pie
+[1]   Segmentation fault      ./busybox-x86-pi...
+busybox-x86-nopie
+ok
+
+Android 2.3.3
+busybox-x86-pie
+[hang]
+busybox-x86-nopie
+ok
+
+===== arm =====
+
+Android L
+busybox-arm-pie
+ok
+busybox-arm-nopie
+error: only position independent executables (PIE) are supported.
+
+Android 4.4.2
+busybox-arm-pie
+ok
+busybox-arm-nopie
+ok
+
+Android 4.3
+busybox-arm-pie
+ok
+busybox-arm-nopie
+ok
+
+Android 4.2.2
+busybox-arm-pie
+ok
+busybox-arm-nopie
+ok
+
+Android 4.1.2
+busybox-arm-pie
+ok
+busybox-arm-nopie
+ok
+
+Android 4.0.4
+busybox-arm-pie
+[1]   Segmentation fault      ./busybox-arm-pi...
+busybox-arm-nopie
+ok
+
+Android 2.3.3
+busybox-arm-pie
+[1]   Segmentation fault      ./busybox-arm-pi...
+busybox-arm-nopie
+ok
