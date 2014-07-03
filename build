@@ -10,15 +10,15 @@ cd ~/busybox
 for ARCH_NAME in x86 arm mips; do
   export ARCH_NAME
   for bintype in pie nopie; do
-    if [ "$bintype" = "nopie" -a "$ARCH_NAME" = "x86" ]; then
-      # target Android 2.3/API version 9 for the x86 non-pie binaries, the oldest available in the NDK
-      export GOOGLE_PLATFORM=9
-    elif [ "$bintype" = "nopie" ]; then # arm or mips
+    if [ "$bintype" = "nopie" -a "$ARCH_NAME" = "arm" ]; then
       # target Android 2.2/API version 8 for the arm non-pie binaries, the oldest commonly used
       export GOOGLE_PLATFORM=8
       # API version 8 does not have arpa/telnet.h header, use API version 9's
       mkdir -p include/arpa
       cp /home/admin/droid/android-ndk/platforms/android-9/arch-arm/usr/include/arpa/telnet.h include/arpa/
+    elif [ "$bintype" = "nopie" ]; then
+      # target Android 2.3/API version 9 for the x86/mips non-pie binaries, the oldest commonly used in the NDK
+      export GOOGLE_PLATFORM=9
     else
       # use default target for pie binaries (currently 15/ICS)
       unset GOOGLE_PLATFORM
